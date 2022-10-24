@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap");
+:root {
+  --primary: #7c8587;
+  --text: #484848;
+  --gris-1: #efefef;
+  --blanc: #ffff; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text);
+  font-size: 1.6rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0 2rem 0; }
+
+ul {
+  list-style: circle;
+  margin: 1rem 2rem; }
+
+a {
+  text-decoration: none;
+  color: var(--text); }
+
+img {
+  width: 100%; }
+
+.d-flex {
+  display: flex; }
+
+.d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.justify-center {
+  justify-content: center; }
+
+.align-center {
+  align-items: center; }
+
+.grid {
+  display: grid; }
+
+.mb-5 {
+  margin-bottom: 5rem; }
+
+.mb-2 {
+  margin-bottom: 2rem; }
+
+.mt-2 {
+  margin-top: 2rem; }
+
+.mt-5 {
+  margin-top: 5rem; }
+
+.mr-2 {
+  margin-right: 2rem; }
+
+.title {
+  letter-spacing: 0.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase; }
+
+.trait {
+  border-bottom: 4px solid var(--text);
+  width: 20%; }
+
+.gridContainer {
+  display: grid;
+  grid: "header header" 220px "gauche droite" 1fr / 550px auto; }
+  @media (max-width: 480px) {
+    .gridContainer {
+      grid: "header" auto "gauche" auto "droite" auto / auto; }
+      .gridContainer .title {
+        font-size: 1.25rem; }
+      .gridContainer .trait {
+        border-bottom: 1px solid var(--text);
+        width: 15%; }
+      .gridContainer li, .gridContainer p, .gridContainer h3 {
+        font-size: 1.25rem; } }
+  @media (max-width: 768px) {
+    .gridContainer {
+      grid: "header" auto "gauche" auto "droite" auto / auto; }
+      .gridContainer li, .gridContainer p, .gridContainer h3 {
+        font-size: 1.5rem; }
+      .gridContainer .trait {
+        border-bottom: 2px solid var(--text); } }
+  @media (min-width: 768px) and (max-width: 979px) {
+    .gridContainer {
+      grid: "header" auto "gauche" auto "droite" auto / auto; } }
+
+header {
+  grid-area: header;
+  position: relative; }
+  header .picture {
+    filter: blur(4px); }
+    header .picture img {
+      height: 220px; }
+  header .aProposDeMoi {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    left: 10%; }
+    header .aProposDeMoi img {
+      width: 15%;
+      border-radius: 50%; }
+    header .aProposDeMoi .moiText {
+      display: flex;
+      flex-direction: column; }
+      header .aProposDeMoi .moiText h1 {
+        color: var(--blanc);
+        font-weight: 700; }
+      header .aProposDeMoi .moiText p {
+        color: var(--blanc); }
+  @media (max-width: 480px) {
+    header .picture img {
+      height: 100px; }
+    header .aProposDeMoi img {
+      width: 20%; }
+    header .aProposDeMoi .moiText h1 {
+      font-size: 1.5rem;
+      margin: 0; }
+    header .title {
+      font-size: 1.25rem; }
+    header .trait {
+      border-bottom: 1px solid var(--text);
+      width: 15%; }
+    header li, header p, header h3 {
+      font-size: 1.25rem; } }
+
+.gauche {
+  grid-area: gauche;
+  padding: 0 2rem;
+  background-color: var(--blanc); }
+  .gauche .coordonee {
+    display: flex;
+    flex-direction: column; }
+    .gauche .coordonee .meTrouver {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      width: 50%;
+      border-radius: 8px; }
+      .gauche .coordonee .meTrouver i {
+        margin-right: 1rem;
+        font-size: 1.8rem; }
+      .gauche .coordonee .meTrouver:hover {
+        background: var(--gris-1); }
+        .gauche .coordonee .meTrouver:hover i {
+          scale: 1.5;
+          color: var(--primary);
+          transition: 0.2s all; }
+  @media (max-width: 480px) {
+    .gauche .coordonee .meTrouver {
+      width: 100%; }
+      .gauche .coordonee .meTrouver i {
+        font-size: 1.25rem; }
+    .gauche .title {
+      font-size: 1.25rem; }
+    .gauche .trait {
+      border-bottom: 1px solid var(--text);
+      width: 15%; }
+    .gauche li, .gauche p, .gauche h3 {
+      font-size: 1.25rem; } }
+
+.droite {
+  grid-area: droite;
+  background-color: var(--gris-1);
+  padding: 0 2rem; }
+  .droite .imgTech {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-row-gap: 2rem;
+    column-gap: 2rem;
+    cursor: pointer; }
+    .droite .imgTech .txtTech {
+      display: flex;
+      justify-content: center; }
+      .droite .imgTech .txtTech img {
+        width: 35%; }
+      .droite .imgTech .txtTech p {
+        opacity: 0; }
+  @media (max-width: 480px) {
+    .droite .imgTech {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+    .droite .title {
+      font-size: 1.25rem; }
+    .droite .trait {
+      border-bottom: 1px solid var(--text);
+      width: 15%; }
+    .droite li, .droite p, .droite h3 {
+      font-size: 1.25rem; } }
+  @media (max-width: 768px) {
+    .droite .imgTech {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+    .droite li, .droite p, .droite h3 {
+      font-size: 1.5rem; }
+    .droite .trait {
+      border-bottom: 2px solid var(--text); } }
+  .droite .mesFormations .formation h3 {
+    margin: 0.7rem 0; }
+  .droite .mesExperiences .experience h3 {
+    margin: 0.7rem 0; }

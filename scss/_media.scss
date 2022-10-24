@@ -1,0 +1,44 @@
+@mixin xs {
+    @media (max-width: 480px) {
+        @content;
+        .title {
+            font-size: 1.25rem;
+        }
+        .trait {
+            border-bottom: 1px solid var(--text);
+            width: 15%;
+        }
+        li,p,h3 {
+            font-size: 1.25rem;
+        }
+    
+    }
+    
+}
+
+@mixin sm {
+    @media (max-width: 768px) {
+        @content;
+        li,p,h3 {
+            font-size: 1.5rem;
+        }
+        .trait {
+            border-bottom: 2px solid var(--text);
+        }
+    }
+    
+}
+
+@mixin md {
+    @media (min-width: 768px) and (max-width: 979px) {
+        @content;
+    }
+    
+}
+
+@mixin xl {
+    @media (min-width: 1200px) {
+        @content;
+    }
+    
+}

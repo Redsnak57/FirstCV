@@ -1,0 +1,52 @@
+.d-flex {
+    display: flex;
+}
+
+.d-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mr-2 {
+    margin-right: 2rem;
+}
+
+.title {
+    letter-spacing: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.trait {
+    border-bottom: 4px solid var(--text);
+    width: 20%;
+}
